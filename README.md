@@ -25,3 +25,49 @@ This project implements a real-time translator for **Lengua de Señas Mexicana (
 ```bash
 git clone https://github.com/RafaMej/Sign-Language-Translator.git
 cd Sign-Language-Translator
+```
+
+### 2. Create and Activate Virtual Environment (Optional)
+
+```bash
+python -m venv venv
+source venv/bin/activate   # On Windows: venv\Scripts\activate
+```
+
+### 3. Install Python Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+o
+```bash
+pip install flask opencv-python mediapipe tensorflow numpy
+```
+
+## ▶️ How to Run the System
+
+### 1. Start the Flask Server
+
+```bash
+python app.py
+```
+
+### 2. Access the Web Interface
+
+Open your browser and go to:
+```bash
+[python app.py](http://127.0.0.1:5000)
+```
+
+## 📈 Example Use Case
+
+1. Click Iniciar Traductor to begin detection.
+2. Perform one of the learned gestures.
+3. The system displays the most likely detected sign and the associated probabilities.
+4. Use Recopilar Datos to expand dataset or Reentrenar Modelo for further training
+
+## 🧑‍🔬 Author
+
+Rafael Mejía
+Spring 2025 – Universidad de las Américas Puebla
+Artificial Intelligence – Dra. Alejandra Hernández Sánchez
