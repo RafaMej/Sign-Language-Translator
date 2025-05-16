@@ -1,0 +1,11 @@
+{
+    "python.defaultInterpreterPath": "/Users/rafaelm/programming/.vscode-env/bin/python",
+    "python.terminal.activateEnvironment": true,
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.formatting.provider": "autopep8",
+    "editor.formatOnSave": true,
+    "python.analysis.extraPaths": [
+        "/Users/rafaelm/programming"
+    ]
+}

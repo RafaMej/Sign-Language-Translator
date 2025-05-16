@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traductor de Lengua de Señas Mexicana</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Traductor de Lengua de Señas Mexicana</h1>
+            <p>Sistema de reconocimiento de señas utilizando Inteligencia Artificial</p>
+        </header>
+
+        <div class="main-content">
+            <div class="video-container">
+                <h2>Cámara en vivo</h2>
+                <div class="video-feed">
+                    <img src="{{ url_for('video_feed') }}" alt="Video en vivo" />
+                </div>
+            </div>
+
+            <div class="controls">
+                <h2>Controles</h2>
+                <p>Seleccione una opción para comenzar:</p>
+                
+                <div class="btn-group">
+                    <button class="btn btn-primary" id="btnStart">Iniciar Traductor</button>
+                    <button class="btn btn-success" id="btnCollect">Recopilar Datos</button>
+                    <button class="btn btn-warning" id="btnTrain">Reentrenar Modelo</button>
+                    <button class="btn btn-danger" id="btnStop">Detener</button>
+                </div>
+                
+                <div class="status" id="status">
+                    Sistema listo
+                </div>
+            </div>
+
+            <div class="results">
+                <h2>Resultados</h2>
+                
+                <div class="detected-sign" id="detectedSign">
+                    Esperando señas...
+                </div>
+                
+                <h3>Probabilidades:</h3>
+                <div class="probabilities" id="probabilities">
+                    <div class="probability-item">
+                        <span>hola</span>
+                        <span>0.00</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="probability-item">
+                        <span>gracias</span>
+                        <span>0.00</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="probability-item">
+                        <span>por favor</span>
+                        <span>0.00</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="probability-item">
+                        <span>ayuda</span>
+                        <span>0.00</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Traductor LSM - Sistema de reconocimiento de Lengua de Señas Mexicana © 2025</p>
+        </footer>
+    </div>
+    <script>
+        // Pasar las acciones desde Flask a JavaScript
+        window.availableActions = {{ actions|tojson|safe }};
+    </script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
